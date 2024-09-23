@@ -1,0 +1,55 @@
+package org.moremar.aoc;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.List;
+
+/**
+ * Solver for a given day of the AOC event.
+ * It parses the input file into lines, and delegates the solving to the right engine
+ * for the day being solved.
+ */
+public class Solver {
+
+    private final int myDay;
+
+    public Solver(int day) {
+        myDay = day;
+    }
+
+    /**
+     * Get the list of lines in the input file for this day's puzzle
+     */
+    private List<String> getInputLines() throws AocException {
+        final String inputFilePath = "input/day" + (myDay < 10 ? "0" : "") + myDay + ".txt";
+        InputStream inputStream = AocMain.class.getClassLoader().getResourceAsStream(inputFilePath);
+        if (inputStream == null) {
+            throw new AocException("Cannot find input file " + inputFilePath);
+        }
+        return new BufferedReader(new InputStreamReader(inputStream)).lines().toList();
+    }
+
+    /**
+     * Compute the solution of both parts of this day's puzzle and print them on the screen
+     */
+    public void solve() throws AocException {
+        final ISolverEngine solverEngine = getSolverEngine();
+        final List<String> lines = getInputLines();
+        System.out.println("Day " + myDay + ": "
+                          + solverEngine.solvePart1(lines) + " | "
+                          + solverEngine.solvePart2(lines));
+    }
+
+    /**
+     * Get the engine implementation for this day's puzzle
+     */
+    private ISolverEngine getSolverEngine() throws AocException {
+        return switch (myDay) {
+            case 1 -> new SolverDay01();
+            case 2 -> new SolverDay02();
+            case 3 -> new SolverDay03();
+            default -> throw new AocException("No solver implementation for day " + myDay);
+        };
+    }
+}
