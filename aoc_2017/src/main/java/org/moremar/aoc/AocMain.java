@@ -1,15 +1,14 @@
 package org.moremar.aoc;
 
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
+import org.moremar.aoc.common.AocException;
+import org.moremar.aoc.solvers.Solver;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class AocMain {
     public static void main(String[] args) {
+        // run the AOC solver for each day
         try {
             for (int day = 1; day <= 3; ++day) {
-                Solver solver = new Solver(day);
+                Solver solver = new Solver(day, AocMain.class.getClassLoader());
                 solver.solve();
             }
         } catch (AocException e) {

@@ -1,10 +1,10 @@
-package org.moremar.aoc;
+package org.moremar.aoc.common;
 
 /**
  * Custom exception class used by all exceptions raised in the AOC solvers
  */
 public class AocException extends Exception {
-    AocException(String message) {
+    public AocException(String message) {
         super(message);
     }
 }

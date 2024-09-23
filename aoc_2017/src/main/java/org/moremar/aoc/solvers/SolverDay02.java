@@ -1,4 +1,4 @@
-package org.moremar.aoc;
+package org.moremar.aoc.solvers;
 
 import java.util.Arrays;
 import java.util.Collections;

@@ -1,6 +1,10 @@
 package org.moremar.aoc;
 
 import org.junit.jupiter.api.Test;
+import org.moremar.aoc.common.AocException;
+import org.moremar.aoc.solvers.ISolverEngine;
+import org.moremar.aoc.solvers.SolverDay03;
+
 import java.util.Arrays;
 import java.util.List;
 

@@ -1,4 +1,6 @@
-package org.moremar.aoc;
+package org.moremar.aoc.solvers;
+
+import org.moremar.aoc.common.AocException;
 
 import java.util.List;
 
