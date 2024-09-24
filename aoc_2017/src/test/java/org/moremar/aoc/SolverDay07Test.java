@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SolverDay07Test {
 
-    String INPUT = """
+    final static String INPUT = """
             pbga (66)
             xhth (57)
             ebii (61)
