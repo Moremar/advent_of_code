@@ -2,6 +2,7 @@ package org.moremar.aoc.common;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public record Coord(int x, int y) {
 
@@ -12,6 +13,26 @@ public record Coord(int x, int y) {
 
     public Coord add(Coord c) {
         return new Coord(x + c.x, y + c.y);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Coord coord = (Coord) o;
+        return x == coord.x && y == coord.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
+    }
+
+    /**
+     * Get the 4 adjacent coordinates (excluding diagonals)
+     */
+    public List<Coord> adjacent4() {
+        return Arrays.asList(add(UP), add(DOWN), add(LEFT), add(RIGHT));
     }
 
     /**

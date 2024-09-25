@@ -21,7 +21,7 @@ public class SolverDay10 implements ISolverEngine {
         return String.valueOf(nodes[0] * nodes[1]);
     }
 
-    public State applyRound(int[] nodes, int[] lengths, State state) {
+    public static State applyRound(int[] nodes, int[] lengths, State state) {
         int nodeCount = nodes.length;
         int pos = state.position;
         int skipSize = state.skipSize;
@@ -44,7 +44,11 @@ public class SolverDay10 implements ISolverEngine {
 
     @Override
     public String solvePart2(List<String> lines) {
-        final int[] lengths = parseInputAscii(lines);
+        return getKnotHash(lines.getFirst());
+    }
+
+    public static String getKnotHash(String line) {
+        final int[] lengths = parseInputAscii(line);
         // run 64 rounds
         int nodeCount = 256;
         int[] nodes = IntStream.range(0, nodeCount).toArray();
@@ -77,12 +81,11 @@ public class SolverDay10 implements ISolverEngine {
     /**
      * Parse the input lines as ASCII codes
      */
-    private int[] parseInputAscii(List<String> lines) {
-        String str = lines.getFirst();
-        int[] result = new int[str.length() + 5];
+    private static int[] parseInputAscii(String line) {
+        int[] result = new int[line.length() + 5];
         int position = 0;
-        while (position < str.length()) {
-            result[position] = str.charAt(position);
+        while (position < line.length()) {
+            result[position] = line.charAt(position);
             ++position;
         }
         // add hard-coded values in the lengths
