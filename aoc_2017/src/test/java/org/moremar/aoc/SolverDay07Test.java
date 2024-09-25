@@ -4,8 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.moremar.aoc.common.AocException;
 import org.moremar.aoc.solvers.ISolverEngine;
 import org.moremar.aoc.solvers.SolverDay07;
-import java.util.Arrays;
-
+import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SolverDay07Test {
@@ -28,14 +27,14 @@ class SolverDay07Test {
 
     @Test
     void solvePart1() throws AocException {
-        AocScenario scenario = new AocScenario(Arrays.asList(INPUT.split("\n")), "tknk");
+        AocScenario scenario = new AocScenario(List.of(INPUT.split("\n")), "tknk");
         ISolverEngine engine = new SolverDay07();
         assertEquals(scenario.expectedOutput(), engine.solvePart1(scenario.input()));
     }
 
     @Test
     void solvePart2() throws AocException {
-        AocScenario scenario = new AocScenario(Arrays.asList(INPUT.split("\n")), "60");
+        AocScenario scenario = new AocScenario(List.of(INPUT.split("\n")), "60");
         ISolverEngine engine = new SolverDay07();
         assertEquals(scenario.expectedOutput(), engine.solvePart2(scenario.input()));
     }
