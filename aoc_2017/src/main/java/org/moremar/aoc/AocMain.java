@@ -7,7 +7,7 @@ public class AocMain {
     public static void main(String[] args) {
         // run the AOC solver for each day
         try {
-            for (int day = 1; day <= 15; ++day) {
+            for (int day = 1; day <= 16; ++day) {
                 Solver solver = new Solver(day, AocMain.class.getClassLoader());
                 solver.solve();
             }
