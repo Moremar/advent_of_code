@@ -15,6 +15,10 @@ public record Coord(int x, int y) {
         return new Coord(x + c.x, y + c.y);
     }
 
+    public Coord subtract(Coord c) {
+        return new Coord(x - c.x, y - c.y);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
