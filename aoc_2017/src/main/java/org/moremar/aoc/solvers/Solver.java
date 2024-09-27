@@ -67,6 +67,7 @@ public class Solver {
             case 15 -> new SolverDay15();
             case 16 -> new SolverDay16();
             case 17 -> new SolverDay17();
+            case 18 -> new SolverDay18();
             default -> throw new AocException("No solver implementation for day " + myDay);
         };
     }
