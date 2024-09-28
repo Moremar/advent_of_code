@@ -7,9 +7,10 @@ import java.util.Objects;
 public record Coord(int x, int y) {
 
     public static final Coord UP = new Coord(0, 1);
+    public static final Coord RIGHT = new Coord(1, 0);
     public static final Coord DOWN = new Coord(0, -1);
     public static final Coord LEFT = new Coord(-1, 0);
-    public static final Coord RIGHT = new Coord(1, 0);
+    public static final List<Coord> DIRECTIONS = Arrays.asList(UP, RIGHT, DOWN, LEFT);
 
     public Coord add(Coord c) {
         return new Coord(x + c.x, y + c.y);
@@ -46,5 +47,19 @@ public record Coord(int x, int y) {
         return Arrays.asList(
             add(UP), add(DOWN), add(LEFT), add(RIGHT),
             add(UP.add(LEFT)), add(UP.add(RIGHT)), add(DOWN.add(LEFT)), add(DOWN.add(RIGHT)));
+    }
+
+    public Coord turnRight() throws AocException {
+        if (!DIRECTIONS.contains(this)) {
+            throw new AocException("Can only be called on a direction");
+        }
+        return DIRECTIONS.get((DIRECTIONS.indexOf(this) + 1) % 4);
+    }
+
+    public Coord turnLeft() throws AocException {
+        if (!DIRECTIONS.contains(this)) {
+            throw new AocException("Can only be called on a direction");
+        }
+        return DIRECTIONS.get((DIRECTIONS.indexOf(this) + 3) % 4);
     }
 }
