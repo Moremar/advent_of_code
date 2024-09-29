@@ -32,7 +32,7 @@ public class SolverDay24 implements ISolverEngine {
             this.strength = strength;
         }
 
-        protected Bridge extend(Component component) {
+        private Bridge extend(Component component) {
             if (!component.ports.contains(port) || components.contains(component.id)) {
                 return null;
             }
