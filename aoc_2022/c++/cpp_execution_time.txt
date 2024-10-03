@@ -1,0 +1,108 @@
+
+DAY 01 : day01\Release\day01.bin.exe
+Part 1 : 73211  (0 ms)
+Part 2 : 213958  (0 ms)
+
+DAY 02 : day02\Release\day02.bin.exe
+Part 1 : 11906  (0 ms)
+Part 2 : 11186  (1 ms)
+
+DAY 03 : day03\Release\day03.bin.exe
+Part 1 : 7848  (3 ms)
+Part 2 : 2616  (0 ms)
+
+DAY 04 : day04\Release\day04.bin.exe
+Part 1 : 542  (18 ms)
+Part 2 : 900  (0 ms)
+
+DAY 05 : day05\Release\day05.bin.exe
+Part 1 : VQZNJMWTR  (2 ms)
+Part 2 : NLCDCLVMQ  (0 ms)
+
+DAY 06 : day06\Release\day06.bin.exe
+Part 1 : 1343  (0 ms)
+Part 2 : 2193  (2 ms)
+
+DAY 07 : day07\Release\day07.bin.exe
+Part 1 : 1513699  (1 ms)
+Part 2 : 7991939  (0 ms)
+
+DAY 08 : day08\Release\day08.bin.exe
+Part 1 : 1787  (3 ms)
+Part 2 : 440640  (0 ms)
+
+DAY 09 : day09\Release\day09.bin.exe
+Part 1 : 6311  (3 ms)
+Part 2 : 2482  (3 ms)
+
+DAY 10 : day10\Release\day10.bin.exe
+Part 1 : 11780  (0 ms)
+Part 2 :
+###..####.#..#.#....###...##..#..#..##..
+#..#....#.#..#.#....#..#.#..#.#..#.#..#.
+#..#...#..#..#.#....###..#..#.#..#.#..#.
+###...#...#..#.#....#..#.####.#..#.####.
+#....#....#..#.#....#..#.#..#.#..#.#..#.
+#....####..##..####.###..#..#..##..#..#.
+  (0 ms)
+
+DAY 11 : day11\Release\day11.bin.exe
+Part 1 : 102399  (0 ms)
+Part 2 : 23641658401  (40 ms)
+
+DAY 12 : day12\Release\day12.bin.exe
+Part 1 : 462  (10 ms)
+Part 2 : 451  (2488 ms)
+
+DAY 13 : day13\Release\day13.bin.exe
+Part 1 : 5843  (7 ms)
+Part 2 : 26289  (2 ms)
+
+DAY 14 : day14\Release\day14.bin.exe
+Part 1 : 1513  (20 ms)
+Part 2 : 22646  (383 ms)
+
+DAY 15 : day15\Release\day15.bin.exe
+Part 1 : 5073496  (1 ms)
+Part 2 : 13081194638237  (2878 ms)
+
+DAY 16 : day16\Release\day16.bin.exe
+Part 1 : 2077  (723 ms)
+Part 2 : 2741  (1335 ms)
+
+DAY 17 : day17\Release\day17.bin.exe
+Part 1 : 3071  (31 ms)
+Part 2 : 1523615160362  (158 ms)
+
+DAY 18 : day18\Release\day18.bin.exe
+Part 1 : 4282  (6 ms)
+Part 2 : 2452  (8 ms)
+
+DAY 19 : day19\Release\day19.bin.exe
+Part 1 : 1389  (1353 ms)
+Part 2 : 3003  (15604 ms)
+
+DAY 20 : day20\Release\day20.bin.exe
+Part 1 : 14888  (367 ms)
+Part 2 : 3760092545849  (3650 ms)
+
+DAY 21 : day21\Release\day21.bin.exe
+Part 1 : 81075092088442  (6 ms)
+Part 2 : 3349136384441  (6 ms)
+
+DAY 22 : day22\Release\day22.bin.exe
+Part 1 : 47462  (23 ms)
+Part 2 : 137045  (7 ms)
+
+DAY 23 : day23\Release\day23.bin.exe
+Part 1 : 3766 (44 ms)
+Part 2 : 954 (4677 ms)
+
+DAY 24 : day24\Release\day24.bin.exe
+Part 1 : 232  (505 ms)
+Part 2 : 715  (1598 ms)
+
+DAY 25 : day25\Release\day25.bin.exe
+Part 1 : 2=0=02-0----2-=02-10  (0 ms)
+
+All days solutions took 37 seconds to complete.

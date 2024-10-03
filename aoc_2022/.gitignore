@@ -1,0 +1,5 @@
+.idea
+python/.idea
+python/*/__pycache__
+c++/build
+c++/.vscode
