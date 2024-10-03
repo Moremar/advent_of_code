@@ -8,7 +8,7 @@ string Part2::solve(const vector<string> &signals) {
     vector<map<char, int>> freqs = Part1::getFreqs(signals);
     // pick the least popular letter for each position
     string corrected = "";
-    for (const auto freq : freqs) {
+    for (const auto& freq : freqs) {
         vector<pair<char, int>> toSort(freq.cbegin(), freq.cend());
         // sort in the opposite order from part 1
         sort(toSort.begin(), toSort.end(), [](pair<char, int> v1, pair<char, int> v2) {

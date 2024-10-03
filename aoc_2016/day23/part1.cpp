@@ -20,9 +20,6 @@ void Assembunny::run() {
     myfile << myRegisters[0] << " " << myRegisters[1] << " " << myRegisters[2] << " " << myRegisters[3] << endl; 
 
     while (myPos < myInstructions.size()) {
-        if (myPos < 0)
-            throw AdventException("Negative position found in the assembunny.");
-
         const auto &instr = myInstructions[myPos];
         myfile << "[" << myRegisters[0] << " " << myRegisters[1] << " " << myRegisters[2] << " " << myRegisters[3] << "]  "; 
         myfile << instr.str() << endl;

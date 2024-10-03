@@ -7,7 +7,7 @@ vector<Node> Part1::parse(const string &fileName) {
     vector<Node> nodes;
     regex rgx("/dev/grid/node-x([0-9]+)-y([0-9]+) +([0-9]+)T +([0-9]+)T +([0-9]+)");
     int headerSize = 2;
-    for (const auto line : getFileLines(fileName)) {
+    for (const auto& line : getFileLines(fileName)) {
         if (headerSize > 0) {
             headerSize--;
             continue;

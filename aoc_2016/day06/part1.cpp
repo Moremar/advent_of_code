@@ -31,7 +31,7 @@ string Part1::solve(const vector<string> &signals) {
     const auto freqs = getFreqs(signals);
     // pick the most popular letter for each position
     string corrected = "";
-    for (const auto freq : freqs) {
+    for (const auto& freq : freqs) {
         vector<pair<char, int>> toSort(freq.cbegin(), freq.cend());
         sort(toSort.begin(), toSort.end(), [](pair<char, int> v1, pair<char, int> v2) {
             return (v1.second > v2.second) || (v1.second == v2.second && v1.first < v2.first);

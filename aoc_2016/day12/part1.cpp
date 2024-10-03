@@ -42,8 +42,6 @@ void Assembunny::runInstruction(const Instruction &instr) {
 
 void Assembunny::run() {
     while (myPos < myInstructions.size()) {
-        if (myPos < 0)
-            throw AdventException("Negative position found in the assembunny.");
         runInstruction(myInstructions[myPos]);
     }
 }

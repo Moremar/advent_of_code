@@ -17,8 +17,10 @@ vector<State> State::getNextStates() const {
         if ("bcdef"s.find(hash.at(i)) != string::npos) {
             Coordinates nextCoords(myCoords.first + dirs.at(i).first,
                                myCoords.second + dirs.at(i).second);
-            if (nextCoords.first < 0 | nextCoords.first > 3 
-                    | nextCoords.second < 0 | nextCoords.second > 3) {
+            if ( (nextCoords.first < 0)
+	       | (nextCoords.first > 3) 
+               | (nextCoords.second < 0)
+	       | (nextCoords.second > 3) ) {
                 // out of the grid
                 continue;
             }

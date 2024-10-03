@@ -25,7 +25,7 @@ map<Coordinates, map<Coordinates, int>> World::getGraph() const {
 }
 
 Coordinates World::getStartPoint() const {
-    for (const auto node: keys) {
+    for (const auto& node: keys) {
         if (node.second == '0') return node.first;
     }
     throw AdventException("No start point found.");

@@ -16,5 +16,5 @@ struct Room {
 
 namespace Part1 {
     vector<Room> parse(const string &filePath);
-    int solve(vector<Room> data);
+    size_t solve(vector<Room> data);
 }

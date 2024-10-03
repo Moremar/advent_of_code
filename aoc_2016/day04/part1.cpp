@@ -43,8 +43,8 @@ vector<Room> Part1::parse(const string &filePath) {
 }
 
 
-int Part1::solve(vector<Room> data) {
-    auto sum = 0;
+size_t Part1::solve(vector<Room> data) {
+    size_t sum = 0;
     for (const Room &room : data) {
         if (room.isReal()) {
             sum += room.sectorId;

@@ -16,9 +16,6 @@ size_t Assembunny::registerId(const string &registerName) {
 
 int Assembunny::run() {
     while (myPos < myInstructions.size()) {
-        if (myPos < 0)
-            throw AdventException("Negative position found in the assembunny.");
-
         const auto &instr = myInstructions[myPos];
 
         if (instr.cmd == "out") {

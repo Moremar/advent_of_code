@@ -19,7 +19,7 @@ int Part1::solve(const vector<pair<char, int>> &moves) {
     for(const auto &move : moves) {
         auto facing_itr = find(DIRECTIONS.begin(), DIRECTIONS.end(), facing);
         int facing_index = (int) distance(DIRECTIONS.begin(), facing_itr);
-        facing = DIRECTIONS[(facing_index + (move.first == 'R' ? 1 : -1) + 4) % 4];
+        facing = DIRECTIONS[static_cast<size_t>((facing_index + (move.first == 'R' ? 1 : -1) + 4) % 4)];
         position = position + facing * move.second;
     }
     return abs(position.first) + abs(position.second);
