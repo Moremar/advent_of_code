@@ -35,6 +35,7 @@ spotbugs {
 }
 
 // force SpotBugs to generate an HTML report
+// this task gets called automatically by the "check" task (the SpotBugs plugin adds this dependency)
 spotbugsMain {
     reports {
         html {
