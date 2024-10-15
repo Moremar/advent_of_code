@@ -14,9 +14,9 @@ public class SolverDay07 implements ISolverEngine {
     @Override
     public String solvePart1(List<String> lines) throws AocException {
         Map<String, Program> programs = parseInput(lines);
-        for (String name : programs.keySet()) {
-            if (programs.get(name).getParentName() == null) {
-                return name;
+        for (Map.Entry<String, Program> entry : programs.entrySet()) {
+            if (entry.getValue().getParentName() == null) {
+                return entry.getKey();
             }
         }
         throw new AocException("Failed to find the root program");
@@ -39,11 +39,11 @@ public class SolverDay07 implements ISolverEngine {
                 assert totalWeights.size() == 2;
                 int targetTotalWeight = -1;
                 Program programToAdjust = null;
-                for (int totalWeight : totalWeights.keySet()) {
-                    if (totalWeights.get(totalWeight).size() == 1) {
-                        programToAdjust = totalWeights.get(totalWeight).getFirst();
+                for (Map.Entry<Integer, List<Program>> weightEntry : totalWeights.entrySet()) {
+                    if (weightEntry.getValue().size() == 1) {
+                        programToAdjust = weightEntry.getValue().getFirst();
                     } else {
-                        targetTotalWeight = totalWeight;
+                        targetTotalWeight = weightEntry.getKey();
                     }
                 }
                 // the weight of the program must be adjusted so its total weight is equal to its siblings

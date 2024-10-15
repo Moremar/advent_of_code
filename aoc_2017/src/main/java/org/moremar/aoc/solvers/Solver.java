@@ -3,8 +3,10 @@ package org.moremar.aoc.solvers;
 import org.moremar.aoc.common.AocException;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 /**
@@ -15,11 +17,9 @@ import java.util.List;
 public class Solver {
 
     private final int myDay;
-    private final ClassLoader myClassLoader;
 
     public Solver(int day, ClassLoader classLoader) {
         myDay = day;
-        myClassLoader = classLoader;
     }
 
     /**
@@ -27,11 +27,15 @@ public class Solver {
      */
     private List<String> getInputLines() throws AocException {
         final String inputFilePath = "input/day" + (myDay < 10 ? "0" : "") + myDay + ".txt";
-        InputStream inputStream = myClassLoader.getResourceAsStream(inputFilePath);
+        InputStream inputStream = ClassLoader.getSystemResourceAsStream(inputFilePath);
         if (inputStream == null) {
             throw new AocException("Cannot find input file " + inputFilePath);
         }
-        return new BufferedReader(new InputStreamReader(inputStream)).lines().toList();
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
+            return reader.lines().toList();
+        } catch (IOException e) {
+            throw new AocException("Failed to open input file : " + inputFilePath);
+        }
     }
 
     /**

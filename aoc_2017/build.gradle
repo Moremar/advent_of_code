@@ -1,10 +1,18 @@
 plugins {
     id 'application'
     id 'java'
+    id "com.github.spotbugs" version "6.0.25"
 }
 
 group = 'org.moremar.aoc'
 version = '1.0-SNAPSHOT'
+
+// set the version of Gradle to use in the Gradle wrapper
+// when a new Gradle version is released, we can update this version, run "gradle wrapper" to regenerate the wrapper
+// and test that the build still works fine
+wrapper {
+    gradleVersion = '8.10'
+}
 
 repositories {
     mavenCentral()
@@ -17,6 +25,24 @@ dependencies {
 
 application {
     mainClass = 'org.moremar.aoc.AocMain'
+}
+
+// configure the SpotBugs static code analyzer
+spotbugs {
+    ignoreFailures = true
+    showStackTraces = true
+    showProgress = true
+}
+
+// force SpotBugs to generate an HTML report
+spotbugsMain {
+    reports {
+        html {
+            required = true
+            outputLocation = file("$buildDir/reports/spotbugs/main/spotbugs.html")
+            stylesheet = 'fancy-hist.xsl'
+        }
+    }
 }
 
 test {

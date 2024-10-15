@@ -10,7 +10,8 @@ public record Coord(int x, int y) {
     public static final Coord RIGHT = new Coord(1, 0);
     public static final Coord DOWN = new Coord(0, -1);
     public static final Coord LEFT = new Coord(-1, 0);
-    public static final List<Coord> DIRECTIONS = Arrays.asList(UP, RIGHT, DOWN, LEFT);
+
+    private static final List<Coord> DIRECTIONS = Arrays.asList(UP, RIGHT, DOWN, LEFT);
 
     public Coord add(Coord c) {
         return new Coord(x + c.x, y + c.y);
