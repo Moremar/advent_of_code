@@ -20,24 +20,12 @@ def solve1(grid_info):
         for j in range(line_size):
             if grid[(i, j)] != 'X':
                 continue
-            words = []
-            if (i, j + 3) in grid:  # horizontal
-                words.append(grid[(i, j + 1)] + grid[(i, j + 2)] + grid[(i, j + 3)])
-            if (i, j - 3) in grid:  # horizontal backwards
-                words.append(grid[(i, j - 1)] + grid[(i, j - 2)] + grid[(i, j - 3)])
-            if (i + 3, j) in grid:  # vertical
-                words.append(grid[(i + 1, j)] + grid[(i + 2, j)] + grid[(i + 3, j)])
-            if (i - 3, j) in grid:  # vertical backwards
-                words.append(grid[(i - 1, j)] + grid[(i - 2, j)] + grid[(i - 3, j)])
-            if (i + 3, j + 3) in grid:  # diagonal down-right
-                words.append(grid[(i + 1, j + 1)] + grid[(i + 2, j + 2)] + grid[(i + 3, j + 3)])
-            if (i + 3, j - 3) in grid:  # diagonal down-left
-                words.append(grid[(i + 1, j - 1)] + grid[(i + 2, j - 2)] + grid[(i + 3, j - 3)])
-            if (i - 3, j - 3) in grid:  # diagonal up-left
-                words.append(grid[(i - 1, j - 1)] + grid[(i - 2, j - 2)] + grid[(i - 3, j - 3)])
-            if (i - 3, j + 3) in grid:  # diagonal up-right
-                words.append(grid[(i - 1, j + 1)] + grid[(i - 2, j + 2)] + grid[(i - 3, j + 3)])
-            result += sum(1 for word in words if word == 'MAS')
+            for direction in [(0, 1), (0, -1), (1, 0), (-1, 0), (1, 1), (1, -1), (-1, 1), (-1, -1)]:
+                if (i + 3 * direction[0], j + 3 * direction[1]) in grid and \
+                        grid[i + direction[0], j + direction[1]] == 'M' and \
+                        grid[i + 2 * direction[0], j + 2 * direction[1]] == 'A' and \
+                        grid[i + 3 * direction[0], j + 3 * direction[1]] == 'S':
+                    result += 1
     return result
 
 
