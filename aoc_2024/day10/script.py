@@ -37,7 +37,7 @@ def solve1(world):
 
 
 def solve2(world):
-    """Solve part 1"""
+    """Solve part 2"""
     return sum(len(get_summits(trailhead, world))
                for trailhead in world
                if world[trailhead] == 0)
