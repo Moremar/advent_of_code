@@ -3,7 +3,7 @@
 
 def parse(file_name):
     """Parse the input file"""
-    with open(file_name, 'r', encoding="utf-8") as file:
+    with open(file_name, 'r', encoding='utf-8') as file:
         disk = []
         position = 0
         for (i, size) in enumerate(int(x) for x in file.read().strip()):

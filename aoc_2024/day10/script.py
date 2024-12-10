@@ -13,15 +13,14 @@ def parse(file_name):
         return world
 
 
-def get_trailhead_summits(trailhead, world):
+def get_summits(trailhead, world):
     """Get a list of the summit of each trail starting at a given trailhead"""
     summits = []
     positions = deque([trailhead])
     directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
     while len(positions) > 0:
         pos = positions.popleft()
-        adjacent = [(pos[0] + direction[0], pos[1] + direction[1]) for direction in directions]
-        for next_position in adjacent:
+        for next_position in [(pos[0] + dx, pos[1] + dy) for (dx, dy) in directions]:
             if next_position in world and world[next_position] == world[pos] + 1:
                 if world[next_position] == 9:
                     summits.append(next_position)
@@ -32,14 +31,14 @@ def get_trailhead_summits(trailhead, world):
 
 def solve1(world):
     """Solve part 1"""
-    return sum(len(set(get_trailhead_summits(trailhead, world)))
+    return sum(len(set(get_summits(trailhead, world)))
                for trailhead in world
                if world[trailhead] == 0)
 
 
 def solve2(world):
     """Solve part 1"""
-    return sum(len(get_trailhead_summits(trailhead, world))
+    return sum(len(get_summits(trailhead, world))
                for trailhead in world
                if world[trailhead] == 0)
 

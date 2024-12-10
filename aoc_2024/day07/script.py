@@ -5,7 +5,7 @@ import re
 
 def parse(file_name):
     """Parse the input file"""
-    with open(file_name, 'r', encoding="utf-8") as file:
+    with open(file_name, 'r', encoding='utf-8') as file:
         equations = []
         for line in file.readlines():
             numbers = list(map(int, re.findall(r'\d+', line)))

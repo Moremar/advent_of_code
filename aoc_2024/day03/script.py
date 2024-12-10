@@ -5,13 +5,13 @@ import re
 
 def parse(file_name):
     """Parse the input file"""
-    with open(file_name, 'r', encoding="utf-8") as file:
+    with open(file_name, 'r', encoding='utf-8') as file:
         pattern = 'mul\\(\\d+,\\d+\\)|don\'t\\(\\)|do\\(\\)'
         instructions = []
         for block in re.findall(pattern, file.read()):
             if block[:3] == 'mul':
                 instructions.append(
-                    ('mul', int(block.split(',')[0][4:]),int(block.split(',')[1][:-1])))
+                    ('mul', int(block.split(',')[0][4:]), int(block.split(',')[1][:-1])))
             else:  # "do" or "don't"
                 instructions.append((block.split('(')[0], -1, -1))
         return instructions

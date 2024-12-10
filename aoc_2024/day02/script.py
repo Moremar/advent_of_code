@@ -2,7 +2,7 @@
 
 def parse(file_name):
     """Parse the input file"""
-    with open(file_name, "r", encoding="utf-8") as file:
+    with open(file_name, 'r', encoding='utf-8') as file:
         return [list(map(int, line.split())) for line in file.readlines()]
 
 
@@ -33,5 +33,5 @@ def solve2(reports):
 
 
 if __name__ == '__main__':
-    parsed = parse("data.txt")
-    print("Day 02:", solve1(parsed), solve2(parsed))
+    parsed = parse('data.txt')
+    print('Day 02:', solve1(parsed), solve2(parsed))
