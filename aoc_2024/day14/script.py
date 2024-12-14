@@ -23,6 +23,7 @@ def solve1(robots):
 
 
 def count_neighbors(pos, positions):
+    """Count the number of robots on adjacent positions for a given position"""
     return sum(positions[(pos[0] + i, pos[1] + j)]
                for i in [-1, 0, 1]
                for j in [-1, 0, 1]
