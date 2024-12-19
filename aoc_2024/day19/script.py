@@ -10,20 +10,6 @@ def parse(file_name):
         return available.split(', '), [line.strip() for line in patterns.split('\n')]
 
 
-def can_create_pattern(pattern, available):
-    """True if a pattern is possible to create with the available designs"""
-    if len(pattern) == 0:
-        return True
-    return any(len(pattern) == 0 or can_create_pattern(pattern[len(a):], available)
-               for a in available
-               if len(a) <= len(pattern) and pattern[:len(a)] == a)
-
-
-def solve1(available, patterns):
-    """Solve part 1"""
-    return len([pattern for pattern in patterns if can_create_pattern(pattern, available)])
-
-
 def count_combinations(pattern, available):
     """Count the number of combinations to create a pattern with the available designs"""
     if len(pattern) == 0:
@@ -33,6 +19,11 @@ def count_combinations(pattern, available):
                              for a in available
                              if len(a) <= len(pattern) and pattern[:len(a)] == a)
     return CACHE[pattern]
+
+
+def solve1(available, patterns):
+    """Solve part 1"""
+    return len([pattern for pattern in patterns if count_combinations(pattern, available) > 0])
 
 
 def solve2(available, patterns):
