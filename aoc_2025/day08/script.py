@@ -48,7 +48,7 @@ def connect_boxes(boxes, max_junctions=None):
         if step == max_junctions:
             circuit_sizes = sorted(len(circuits[circuit_id]) for circuit_id in circuits)
             return circuit_sizes[-1] * circuit_sizes[-2] * circuit_sizes[-3]
-        # exist if we got a single circuit containing all boxes (part 2)
+        # exit if we got a single circuit containing all boxes (part 2)
         if len(circuits) == 1:
             for circuit_id in circuits:
                 if len(circuits[circuit_id]) == len(boxes):
